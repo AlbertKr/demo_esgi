@@ -1,0 +1,6 @@
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+
+ ssh addkey@206.189.246.182 "echo $(cat ~/.ssh/demo_esgi.pub) >> /git/.ssh/authorized_keys"
+
+
+ ssh -i ~/.ssh/demo_esgi git@206.189.246.182

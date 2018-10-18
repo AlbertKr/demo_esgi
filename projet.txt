@@ -1,0 +1,16 @@
+CONTRIBTING ->
+
+contributing.mb -W> branche partir pr branche à nous, part de mastr ? develpp ?
+CB de branches ? uqel branch ?
+Type de workflow ?
+
+organisation -> tache techno / fetaure
+
+fork ? push branch spécifique ?
+
+
+Type de contribution -> Langue de contribution ( contributin en fr , anglais + fr, onyl ang)
+
+template pr issue + pr
+
+(pr de bugfixe)

@@ -1,0 +1,108 @@
+docker images -> pour voir toutes les images 
+
+docker ps -> cherche container en cours
+
+docker ps -a -> cherche tous les containers
+
+docker-compose down -> suppprimer tous les containers
+
+docker run [options] image [commande] [args] -> Créer un container
+
+(ex : docker run ubuntu:14.04 echo "Hello World" )
+
+docker run -ti ubuntu:14.04 bash -> accéder au shell du container, se connecter au container
+
+docker start nom_container/id_container -> lancer un container
+
+docker stop nom_container/id_container -> arrêter un container
+
+docker rm nom_container/id_container -> supprimer container
+
+docker rmi ? -> supprimer image
+
+-------------------------------------------------------------------------------------------
+docker run -it ubuntu:14.04 bash -> seulement en shell
+
+créer un nouvel utilisateur
+adduser new
+
+créer un fichier
+touch cyrille
+
+
+
+
+
+
+
+
+Sortir du c
+container -> relancer même commande pour créer un container -> user n'est plus là
+exit
+docker ps -a
+-------------------------------------------------------------------------------------------
+
+docker exec -> lancer une commande
+
+docker exec id/name ping -c nb_ping adresse_web -> commande pour ping
+
+
+docker run -d --rm httpd -> --rm supprime le container une fois terminé
+
+mon_pc:container
+
+docker run -d --rm -p 8080:80 httpd -> accessible via le port 8080
+
+docker run -d --rm -p 8080:80 -p 8081:443 httpd -> accessible via le port 8080 en http et 8081 en https
+
+docker run -d --rm -p 8080:80 -v /User/Albert/ESGI/test:var/www/html... httpd -> -v -> partage les sources entre pc et container, si l'un est modifié, l'autre aussi sera modifié, vice versa. Si fichier/dossier existe pas, il le crée, s'il existe, le remplace. Priorité répertoire pc.
+
+
+docker pull -> récupérer image
+
+docker login/logout -> travailler avec le hub
+
+
+-------------------------------------------------------------------------------------------
+
+TP ->
+
+récupérer alpine
+docker run/pull alpine
+
+vérifier que l'image existe
+docker images
+
+démarrer un container avec un shell de manière interactive avec l'image alpine
+docker run -ti alpine
+
+voir les containers lancés
+docker ps
+
+
+
+créer image =>
+
+coté container
+1. touch albert
+
+coté pc
+2. docker commit 3lettres_container albertkr/nom_image -> push dans docker hub
+docker commit 3lettres_container  nom_image -> localement
+3. docker images pour voir l'image qui vient d'être créée
+4. docker login
+5. docker push nom_repository
+
+
+docker rmi id_image/nom_image
+
+
+-------------------------------------------------------------------------------------------
+
+TP ->
+
+
+docker run -d -v /Users/Albert/docker_esgi:var/www/html --rm -p 30000:80 --name alpine_apache php:apache
+
+
+
